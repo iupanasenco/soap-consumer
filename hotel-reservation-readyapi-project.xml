@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="e05ece9a-d0f5-4cd5-b3aa-03bc0f08bea1" created="3.5.0" activeEnvironment="Default environment" name="hotel-reservation" updated="3.5.0 2020-11-11T18:12:01Z" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:WsdlInterface" id="52e5ce7e-b331-4b2f-b233-90ff029b03fe" wsaVersion="NONE" name="HotelReservationSoap11" type="wsdl" bindingName="{http://www.iunona-trip.com/soapproducer/reservation/}HotelReservationSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:9090/ws/validateHotelRequest.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart="http://localhost:9090/ws/validateHotelRequest.wsdl">
+      <con:part>
+        <con:url>http://localhost:9090/ws/validateHotelRequest.wsdl</con:url>
+        <con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.iunona-trip.com/soapproducer/reservation/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.iunona-trip.com/soapproducer/reservation/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.iunona-trip.com/soapproducer/reservation/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.iunona-trip.com/soapproducer/reservation/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="OTA_HotelResNotifRQRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="HotelReservations">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="HotelReservation">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="POS">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element maxOccurs="unbounded" minOccurs="0" name="Source">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element minOccurs="0" name="RequestorID">
+                                      <xs:complexType>
+                                        <xs:simpleContent>
+                                          <xs:extension base="xs:string">
+                                            <xs:attribute name="ID" type="xs:string"/>
+                                          </xs:extension>
+                                        </xs:simpleContent>
+                                      </xs:complexType>
+                                    </xs:element>
+                                    <xs:element minOccurs="0" name="BookingChannel">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element name="CompanyName" type="xs:string"/>
+                                        </xs:sequence>
+                                        <xs:attribute name="Type" type="xs:byte"/>
+                                        <xs:attribute name="Primary" type="xs:string"/>
+                                      </xs:complexType>
+                                    </xs:element>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="UniqueID">
+                          <xs:complexType>
+                            <xs:simpleContent>
+                              <xs:extension base="xs:string">
+                                <xs:attribute name="ID" type="xs:string"/>
+                              </xs:extension>
+                            </xs:simpleContent>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="RoomStays">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="RoomStay">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="RoomTypes">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element name="RoomType">
+                                            <xs:complexType>
+                                              <xs:sequence>
+                                                <xs:element name="RoomDescription">
+                                                  <xs:complexType>
+                                                    <xs:sequence>
+                                                      <xs:element name="Text" type="xs:string"/>
+                                                    </xs:sequence>
+                                                  </xs:complexType>
+                                                </xs:element>
+                                              </xs:sequence>
+                                              <xs:attribute name="RoomID" type="xs:byte"/>
+                                              <xs:attribute name="RoomType" type="xs:string"/>
+                                              <xs:attribute name="RoomTypeCode" type="xs:short"/>
+                                            </xs:complexType>
+                                          </xs:element>
+                                        </xs:sequence>
+                                      </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="RatePlans">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element name="RatePlan">
+                                            <xs:complexType>
+                                              <xs:sequence>
+                                                <xs:element name="RatePlanDescription">
+                                                  <xs:complexType>
+                                                    <xs:sequence>
+                                                      <xs:element name="Text" type="xs:string"/>
+                                                    </xs:sequence>
+                                                  </xs:complexType>
+                                                </xs:element>
+                                              </xs:sequence>
+                                              <xs:attribute name="RatePlanName" type="xs:string"/>
+                                              <xs:attribute name="RatePlanCode" type="xs:int"/>
+                                              <xs:attribute name="EffectiveDate" type="xs:date"/>
+                                              <xs:attribute name="ExpireDate" type="xs:date"/>
+                                            </xs:complexType>
+                                          </xs:element>
+                                        </xs:sequence>
+                                      </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="RoomRates">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element name="RoomRate">
+                                            <xs:complexType>
+                                              <xs:sequence>
+                                                <xs:element name="Rates">
+                                                  <xs:complexType>
+                                                    <xs:sequence>
+                                                      <xs:element maxOccurs="unbounded" minOccurs="0" name="Rate">
+                                                        <xs:complexType>
+                                                          <xs:sequence>
+                                                            <xs:element name="Base">
+                                                              <xs:complexType>
+                                                                <xs:simpleContent>
+                                                                  <xs:extension base="xs:string">
+                                                                    <xs:attribute name="AmountAfterTax" type="xs:short" use="optional"/>
+                                                                    <xs:attribute name="CurrencyCode" type="xs:string" use="optional"/>
+                                                                  </xs:extension>
+                                                                </xs:simpleContent>
+                                                              </xs:complexType>
+                                                            </xs:element>
+                                                            <xs:element name="Total">
+                                                              <xs:complexType>
+                                                                <xs:simpleContent>
+                                                                  <xs:extension base="xs:string">
+                                                                    <xs:attribute name="AmountAfterTax" type="xs:short" use="optional"/>
+                                                                    <xs:attribute name="CurrencyCode" type="xs:string" use="optional"/>
+                                                                  </xs:extension>
+                                                                </xs:simpleContent>
+                                                              </xs:complexType>
+                                                            </xs:element>
+                                                          </xs:sequence>
+                                                          <xs:attribute name="UnitMultiplier" type="xs:byte" use="optional"/>
+                                                          <xs:attribute name="EffectiveDate" type="xs:date" use="optional"/>
+                                                          <xs:attribute name="ExpireDate" type="xs:date" use="optional"/>
+                                                        </xs:complexType>
+                                                      </xs:element>
+                                                    </xs:sequence>
+                                                  </xs:complexType>
+                                                </xs:element>
+                                              </xs:sequence>
+                                              <xs:attribute name="EffectiveDate" type="xs:date"/>
+                                              <xs:attribute name="ExpireDate" type="xs:date"/>
+                                              <xs:attribute name="RoomTypeCode" type="xs:short"/>
+                                              <xs:attribute name="RatePlanCode" type="xs:int"/>
+                                              <xs:attribute name="RoomID" type="xs:byte"/>
+                                              <xs:attribute name="NumberOfUnits" type="xs:byte"/>
+                                            </xs:complexType>
+                                          </xs:element>
+                                        </xs:sequence>
+                                      </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="GuestCounts">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element name="GuestCount">
+                                            <xs:complexType>
+                                              <xs:simpleContent>
+                                                <xs:extension base="xs:string">
+                                                  <xs:attribute name="AgeQualifyingCode" type="xs:byte"/>
+                                                  <xs:attribute name="Count" type="xs:byte"/>
+                                                </xs:extension>
+                                              </xs:simpleContent>
+                                            </xs:complexType>
+                                          </xs:element>
+                                        </xs:sequence>
+                                      </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="TimeSpan">
+                                      <xs:complexType>
+                                        <xs:simpleContent>
+                                          <xs:extension base="xs:string">
+                                            <xs:attribute name="Start" type="xs:date"/>
+                                            <xs:attribute name="End" type="xs:date"/>
+                                          </xs:extension>
+                                        </xs:simpleContent>
+                                      </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="Total">
+                                      <xs:complexType>
+                                        <xs:simpleContent>
+                                          <xs:extension base="xs:string">
+                                            <xs:attribute name="CurrencyCode" type="xs:string"/>
+                                            <xs:attribute name="AmountAfterTax" type="xs:short"/>
+                                          </xs:extension>
+                                        </xs:simpleContent>
+                                      </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="ResGuestRPHs">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element maxOccurs="unbounded" minOccurs="0" name="ResGuestRPH">
+                                            <xs:complexType>
+                                              <xs:simpleContent>
+                                                <xs:extension base="xs:string">
+                                                  <xs:attribute name="RPH" type="xs:byte" use="optional"/>
+                                                </xs:extension>
+                                              </xs:simpleContent>
+                                            </xs:complexType>
+                                          </xs:element>
+                                        </xs:sequence>
+                                      </xs:complexType>
+                                    </xs:element>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="ResGuests">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element maxOccurs="unbounded" minOccurs="0" name="ResGuest">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="Profiles">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element name="ProfileInfo">
+                                            <xs:complexType>
+                                              <xs:sequence>
+                                                <xs:element name="Profile">
+                                                  <xs:complexType>
+                                                    <xs:sequence>
+                                                      <xs:element name="Customer">
+                                                        <xs:complexType>
+                                                          <xs:sequence>
+                                                            <xs:element name="PersonName">
+                                                              <xs:complexType>
+                                                                <xs:sequence>
+                                                                  <xs:element name="GivenName" type="xs:string"/>
+                                                                  <xs:element name="Surname" type="xs:string"/>
+                                                                </xs:sequence>
+                                                              </xs:complexType>
+                                                            </xs:element>
+                                                            <xs:element minOccurs="0" name="Telephone">
+                                                              <xs:complexType>
+                                                                <xs:simpleContent>
+                                                                  <xs:extension base="xs:string">
+                                                                    <xs:attribute name="PhoneNumber" type="xs:int"/>
+                                                                    <xs:attribute name="PhoneTechType" type="xs:byte"/>
+                                                                  </xs:extension>
+                                                                </xs:simpleContent>
+                                                              </xs:complexType>
+                                                            </xs:element>
+                                                            <xs:element minOccurs="0" name="Email">
+                                                              <xs:complexType>
+                                                                <xs:simpleContent>
+                                                                  <xs:extension base="xs:string">
+                                                                    <xs:attribute name="EmailType" type="xs:byte"/>
+                                                                  </xs:extension>
+                                                                </xs:simpleContent>
+                                                              </xs:complexType>
+                                                            </xs:element>
+                                                            <xs:element minOccurs="0" name="Address">
+                                                              <xs:complexType>
+                                                                <xs:sequence>
+                                                                  <xs:element name="AddressLine" type="xs:string"/>
+                                                                  <xs:element name="CityName" type="xs:string"/>
+                                                                  <xs:element name="PostalCode" type="xs:short"/>
+                                                                  <xs:element name="StateProv" type="xs:string"/>
+                                                                  <xs:element name="CountryName" type="xs:string"/>
+                                                                </xs:sequence>
+                                                                <xs:attribute name="Type" type="xs:byte"/>
+                                                              </xs:complexType>
+                                                            </xs:element>
+                                                          </xs:sequence>
+                                                          <xs:attribute name="VIP_Indicator" type="xs:string" use="optional"/>
+                                                        </xs:complexType>
+                                                      </xs:element>
+                                                    </xs:sequence>
+                                                    <xs:attribute name="ProfileType" type="xs:byte" use="optional"/>
+                                                  </xs:complexType>
+                                                </xs:element>
+                                              </xs:sequence>
+                                            </xs:complexType>
+                                          </xs:element>
+                                        </xs:sequence>
+                                      </xs:complexType>
+                                    </xs:element>
+                                  </xs:sequence>
+                                  <xs:attribute name="ResGuestRPH" type="xs:byte" use="optional"/>
+                                  <xs:attribute name="ArrivalTime" type="xs:time" use="optional"/>
+                                  <xs:attribute name="PrimaryIndicator" type="xs:string" use="optional"/>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="ResGlobalInfo">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="TimeSpan">
+                                <xs:complexType>
+                                  <xs:simpleContent>
+                                    <xs:extension base="xs:string">
+                                      <xs:attribute name="End" type="xs:date"/>
+                                      <xs:attribute name="Start" type="xs:date"/>
+                                    </xs:extension>
+                                  </xs:simpleContent>
+                                </xs:complexType>
+                              </xs:element>
+                              <xs:element name="Comments">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="Comment">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element name="Text" type="xs:string"/>
+                                        </xs:sequence>
+                                        <xs:attribute name="GuestViewable" type="xs:string"/>
+                                      </xs:complexType>
+                                    </xs:element>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                              <xs:element name="Total">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="Taxes">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element name="Tax">
+                                            <xs:complexType>
+                                              <xs:sequence>
+                                                <xs:element name="TaxDescription">
+                                                  <xs:complexType>
+                                                    <xs:sequence>
+                                                      <xs:element name="Text" type="xs:string"/>
+                                                    </xs:sequence>
+                                                  </xs:complexType>
+                                                </xs:element>
+                                              </xs:sequence>
+                                              <xs:attribute name="Amount" type="xs:float"/>
+                                              <xs:attribute name="Percent" type="xs:byte"/>
+                                              <xs:attribute name="CurrencyCode" type="xs:string"/>
+                                            </xs:complexType>
+                                          </xs:element>
+                                        </xs:sequence>
+                                        <xs:attribute name="CurrencyCode" type="xs:string"/>
+                                        <xs:attribute name="Amount" type="xs:float"/>
+                                      </xs:complexType>
+                                    </xs:element>
+                                  </xs:sequence>
+                                  <xs:attribute name="AmountAfterTax" type="xs:short"/>
+                                  <xs:attribute name="CurrencyCode" type="xs:string"/>
+                                </xs:complexType>
+                              </xs:element>
+                              <xs:element name="HotelReservationIDs">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element maxOccurs="unbounded" minOccurs="0" name="HotelReservationID">
+                                      <xs:complexType>
+                                        <xs:simpleContent>
+                                          <xs:extension base="xs:string">
+                                            <xs:attribute name="ResID_Type" type="xs:byte" use="optional"/>
+                                            <xs:attribute name="ResID_Source" type="xs:string" use="optional"/>
+                                            <xs:attribute name="ResID_Value" type="xs:string" use="optional"/>
+                                          </xs:extension>
+                                        </xs:simpleContent>
+                                      </xs:complexType>
+                                    </xs:element>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                              <xs:element name="Profiles">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="ProfileInfo">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element name="Profile">
+                                            <xs:complexType>
+                                              <xs:sequence>
+                                                <xs:element name="Customer">
+                                                  <xs:complexType>
+                                                    <xs:sequence>
+                                                      <xs:element name="PersonName">
+                                                        <xs:complexType>
+                                                          <xs:sequence>
+                                                            <xs:element name="GivenName" type="xs:string"/>
+                                                            <xs:element name="Surname" type="xs:string"/>
+                                                          </xs:sequence>
+                                                        </xs:complexType>
+                                                      </xs:element>
+                                                      <xs:element name="Telephone">
+                                                        <xs:complexType>
+                                                          <xs:simpleContent>
+                                                            <xs:extension base="xs:string">
+                                                              <xs:attribute name="PhoneNumber" type="xs:int"/>
+                                                              <xs:attribute name="PhoneTechType" type="xs:byte"/>
+                                                            </xs:extension>
+                                                          </xs:simpleContent>
+                                                        </xs:complexType>
+                                                      </xs:element>
+                                                      <xs:element name="Email">
+                                                        <xs:complexType>
+                                                          <xs:simpleContent>
+                                                            <xs:extension base="xs:string">
+                                                              <xs:attribute name="EmailType" type="xs:byte"/>
+                                                            </xs:extension>
+                                                          </xs:simpleContent>
+                                                        </xs:complexType>
+                                                      </xs:element>
+                                                      <xs:element name="Address">
+                                                        <xs:complexType>
+                                                          <xs:sequence>
+                                                            <xs:element name="AddressLine" type="xs:string"/>
+                                                            <xs:element name="CityName" type="xs:string"/>
+                                                            <xs:element name="PostalCode" type="xs:short"/>
+                                                            <xs:element name="StateProv" type="xs:string"/>
+                                                            <xs:element name="CountryName" type="xs:string"/>
+                                                          </xs:sequence>
+                                                          <xs:attribute name="Type" type="xs:byte"/>
+                                                        </xs:complexType>
+                                                      </xs:element>
+                                                    </xs:sequence>
+                                                    <xs:attribute name="VIP_Indicator" type="xs:string"/>
+                                                  </xs:complexType>
+                                                </xs:element>
+                                              </xs:sequence>
+                                              <xs:attribute name="ProfileType" type="xs:byte"/>
+                                            </xs:complexType>
+                                          </xs:element>
+                                        </xs:sequence>
+                                      </xs:complexType>
+                                    </xs:element>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                              <xs:element name="BasicPropertyInfo">
+                                <xs:complexType>
+                                  <xs:simpleContent>
+                                    <xs:extension base="xs:string">
+                                      <xs:attribute name="HotelCode" type="xs:short"/>
+                                    </xs:extension>
+                                  </xs:simpleContent>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                      <xs:attribute name="CreateDateTime" type="xs:dateTime"/>
+                      <xs:attribute name="LastModifyDateTime" type="xs:dateTime"/>
+                      <xs:attribute name="ResStatus" type="xs:string"/>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="EchoToken" type="xs:string"/>
+          <xs:attribute name="TimeStamp" type="xs:dateTime"/>
+          <xs:attribute name="Version" type="xs:float"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="OTA_HotelResNotifRS">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Success" type="xs:string"/>
+            <xs:element name="HotelReservations">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="HotelReservation">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="UniqueID">
+                          <xs:complexType>
+                            <xs:simpleContent>
+                              <xs:extension base="xs:string">
+                                <xs:attribute name="ID" type="xs:string"/>
+                              </xs:extension>
+                            </xs:simpleContent>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="ResGlobalInfo">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="HotelReservationIDs">
+                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="HotelReservationID">
+                                      <xs:complexType>
+                                        <xs:simpleContent>
+                                          <xs:extension base="xs:string">
+                                            <xs:attribute name="ResID_Type" type="xs:byte"/>
+                                            <xs:attribute name="ResID_Value" type="xs:string"/>
+                                          </xs:extension>
+                                        </xs:simpleContent>
+                                      </xs:complexType>
+                                    </xs:element>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="EchoToken" type="xs:string"/>
+          <xs:attribute name="TimeStamp" type="xs:dateTime"/>
+          <xs:attribute name="Target" type="xs:string"/>
+          <xs:attribute name="Version" type="xs:float"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="OTA_HotelResNotifRQRequest">
+    <wsdl:part element="tns:OTA_HotelResNotifRQRequest" name="OTA_HotelResNotifRQRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="HotelReservation">
+    <wsdl:operation name="OTA_HotelResNotifRQ">
+      <wsdl:input message="tns:OTA_HotelResNotifRQRequest" name="OTA_HotelResNotifRQRequest"></wsdl:input>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HotelReservationSoap11" type="tns:HotelReservation">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="OTA_HotelResNotifRQ">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="OTA_HotelResNotifRQRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HotelReservationService">
+    <wsdl:port binding="tns:HotelReservationSoap11" name="HotelReservationSoap11">
+      <soap:address location="http://localhost:9090/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content>
+        <con:type>http://schemas.xmlsoap.org/wsdl/</con:type>
+      </con:part>
+    </con:definitionCache>
+    <con:endpoints>
+      <con:endpoint>http://localhost:9090/ws</con:endpoint>
+    </con:endpoints>
+    <con:operation id="4d20da8d-06f0-4351-a5af-dac8cf25100d" isOneWay="false" action="" name="OTA_HotelResNotifRQ" bindingOperationName="OTA_HotelResNotifRQ" type="One-Way" inputName="OTA_HotelResNotifRQRequest" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="c53027d1-30e6-47f5-bfe5-f3a139b2cc78" name="Request 1">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://localhost:9090/ws</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://www.iunona-trip.com/soapproducer/reservation/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:OTA_HotelResNotifRQRequest EchoToken="4528545b-f875-5c77-9205-22631b68f15a" TimeStamp="2018-07-31T01:16:16Z" Version="1.0">
+         <res:HotelReservations>
+            <res:HotelReservation CreateDateTime="2018-07-31T01:16:16Z" LastModifyDateTime="2018-07-31T01:16:16Z" ResStatus="Reserved">
+               <res:POS>
+                  <!--Zero or more repetitions:-->
+                  <res:Source>
+                     <!--Optional:-->
+                     <res:RequestorID ID="pmsprovider"/>
+                     <!--Optional:-->
+                     <res:BookingChannel Type="1" Primary="true">
+                        <res:CompanyName>Booking.com</res:CompanyName>
+                     </res:BookingChannel>
+                  </res:Source>
+               </res:POS>
+               <res:UniqueID ID="529269fb1459"/>
+               <res:RoomStays>
+                  <res:RoomStay>
+                     <res:RoomTypes>
+                        <res:RoomType RoomID="3" RoomType="King Room" RoomTypeCode="546">
+                           <res:RoomDescription>
+                              <res:Text>King Room</res:Text>
+                           </res:RoomDescription>
+                        </res:RoomType>
+                     </res:RoomTypes>
+                     <res:RatePlans>
+                        <res:RatePlan RatePlanName="King Room Standard" RatePlanCode="42951" EffectiveDate="2018-08-06" ExpireDate="2018-08-09">
+                           <res:RatePlanDescription>
+                              <res:Text>King Room plan</res:Text>
+                           </res:RatePlanDescription>
+                        </res:RatePlan>
+                     </res:RatePlans>
+                     <res:RoomRates>
+                        <res:RoomRate EffectiveDate="2018-08-06" ExpireDate="2018-08-09" RoomTypeCode="20145" RatePlanCode="657" RoomID="3" NumberOfUnits="1">
+                           <res:Rates>
+                              <!--Zero or more repetitions:-->
+                              <res:Rate UnitMultiplier="1" EffectiveDate="2018-08-06" ExpireDate="2018-08-09">
+                                 <res:Base AmountAfterTax="349" CurrencyCode="USD">349</res:Base>
+                                 <res:Total AmountAfterTax="349" CurrencyCode="USD">349</res:Total>
+                              </res:Rate>
+                           </res:Rates>
+                        </res:RoomRate>
+                     </res:RoomRates>
+                     <res:GuestCounts>
+                        <res:GuestCount AgeQualifyingCode="10" Count="1">1</res:GuestCount>
+                     </res:GuestCounts>
+                     <res:TimeSpan Start="2020-12-16+02:00" End="2020-12-18+02:00"/>
+                     <res:Total CurrencyCode="USD" AmountAfterTax="350"/>
+                     <res:ResGuestRPHs>
+                        <!--Zero or more repetitions:-->
+                        <res:ResGuestRPH RPH="1">1</res:ResGuestRPH>
+                     </res:ResGuestRPHs>
+                  </res:RoomStay>
+               </res:RoomStays>
+               <res:ResGuests>
+                  <!--Zero or more repetitions:-->
+                  <res:ResGuest ResGuestRPH="1" ArrivalTime="17:00:00.000+02:00" PrimaryIndicator="true">
+                     <res:Profiles>
+                        <res:ProfileInfo>
+                           <res:Profile ProfileType="1">
+                              <res:Customer VIP_Indicator="false">
+                                 <res:PersonName>
+                                    <res:GivenName>Iunona</res:GivenName>
+                                    <res:Surname>Panasenco</res:Surname>
+                                 </res:PersonName>
+                                 <!--Optional:-->
+                                 <res:Telephone PhoneNumber="4568736458" PhoneTechType="1">4568736458</res:Telephone>
+                                 <!--Optional:-->
+                                 <res:Email EmailType="1">email@test.com</res:Email>
+                                 <!--Optional:-->
+                                 <res:Address Type="1">
+                                    <res:AddressLine>Address</res:AddressLine>
+                                    <res:CityName>City</res:CityName>
+                                    <res:PostalCode>Code</res:PostalCode>
+                                    <res:StateProv>State</res:StateProv>
+                                    <res:CountryName>Moldova</res:CountryName>
+                                 </res:Address>
+                              </res:Customer>
+                           </res:Profile>
+                        </res:ProfileInfo>
+                     </res:Profiles>
+                  </res:ResGuest>
+               </res:ResGuests>
+               <res:ResGlobalInfo>
+                  <res:TimeSpan End="2020-12-16+02:00" Start="2020-12-18+02:00"/>
+                  <res:Comments>
+                     <res:Comment GuestViewable="true">
+                        <res:Text>weekend</res:Text>
+                     </res:Comment>
+                  </res:Comments>
+                  <res:Total AmountAfterTax="997" CurrencyCode="USD">
+                     <res:Taxes CurrencyCode="USD" Amount="76.2">
+                        <res:Tax Amount="65.2" Percent="18" CurrencyCode="USD">
+                           <res:TaxDescription>
+                              <res:Text>my tax</res:Text>
+                           </res:TaxDescription>
+                        </res:Tax>
+                     </res:Taxes>
+                  </res:Total>
+                  <res:HotelReservationIDs>
+                     <!--Zero or more repetitions:-->
+                     <res:HotelReservationID ResID_Type="10" ResID_Source="PMS" ResID_Value="529269fb1459">12</res:HotelReservationID>
+                  </res:HotelReservationIDs>
+                  <res:Profiles>
+                     <res:ProfileInfo>
+                        <res:Profile ProfileType="1">
+                           <res:Customer VIP_Indicator="false">
+                              <res:PersonName>
+                                 <res:GivenName>Iunona</res:GivenName>
+                                 <res:Surname>Panasenco</res:Surname>
+                              </res:PersonName>
+                              <res:Telephone PhoneNumber="0312456789" PhoneTechType="1">0312456789</res:Telephone>
+                              <res:Email EmailType="1">mail@mail.com</res:Email>
+                              <res:Address Type="1">
+                                 <res:AddressLine>Address</res:AddressLine>
+                                 <res:CityName>City</res:CityName>
+                                 <res:PostalCode>Test-23847</res:PostalCode>
+                                 <res:StateProv>State</res:StateProv>
+                                 <res:CountryName>Moldova</res:CountryName>
+                              </res:Address>
+                           </res:Customer>
+                        </res:Profile>
+                     </res:ProfileInfo>
+                  </res:Profiles>
+                  <res:BasicPropertyInfo HotelCode="8287">7295</res:BasicPropertyInfo>
+               </res:ResGlobalInfo>
+            </res:HotelReservation>
+         </res:HotelReservations>
+      </res:OTA_HotelResNotifRQRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.iunona-trip.net/soapproducer/reservation/HotelReservation/OTA_HotelResNotifRQRequest"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+    </con:operation>
+  </con:interface>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:reporting>
+    <con:xmlTemplates/>
+    <con:parameters/>
+  </con:reporting>
+  <con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest">
+    <con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
+// This code is often used for adding custom authentication to ReadyAPI functional tests
+
+// If hardcoding the token, uncomment and change line 5
+// token = '4567'
+
+// If your token is parameterized in Project level custom property, uncomment line 8
+// token = request.parent.testCase.testSuite.project.getProperty('auth_token').getValue()
+
+// To modify all outgoing calls, remove comments from lines 11 to 16
+// headers = request.requestHeaders
+// if (headers.containsKey('auth_token2') == false) {
+//   headers.put('auth_token2', token)
+//   request.requestHeaders = headers
+// }</con:script>
+  </con:eventHandlers>
+  <con:eventHandlers type="TestRunListener.afterStep" name="TestRunListener.afterStep">
+    <con:script>// Save all test step results into files
+// Change the directory path in line 5 to a location where you want to store details
+// then uncomment lines 5 to 10
+
+// filePath = 'C:\\tempOutputDirectory\\'
+// fos = new java.io.FileOutputStream(filePath + testStepResult.testStep.label + '.txt', true)
+// pw = new java.io.PrintWriter(fos)
+// testStepResult.writeTo(pw)
+// pw.close()
+// fos.close()</con:script>
+  </con:eventHandlers>
+  <con:authRepository/>
+  <con:tags/>
+</con:soapui-project>
